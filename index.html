@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apps Launch Page</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" href="icons/favicon.png" type="image/png">
+</head>
+<body>
+  <!-- <div class="split-container">
+    <div class="split-left"> -->
+      <div class="header">
+        <a href="javascript:void(0);" onclick="goToMainPage()">
+          <img class="header-icon" src="icons/components/client.png" alt="Client">
+        </a>
+        <a class="container" onclick="toggleMenu()" class="split">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </a>
+      </div>
+      <div id="myDropdown" class="menu">
+        <ul>
+          <li><a href="javascript:void(0);" class="card-link" onclick="showSubCategory('subTilesDev')" ondblclick="goBack()">Dev</a></li>
+          <li><a href="javascript:void(0);" class="card-link" onclick="showSubCategory('subTilesQA')" ondblclick="goBack()">QA</a></li>
+          <li><a href="javascript:void(0);" class="card-link" onclick="showSubCategory('subTilesUAT')" ondblclick="goBack()">UAT</a></li>
+          <li><a href="javascript:void(0);" class="card-link" onclick="showSubCategory('subTilesProd')" ondblclick="goBack()">Prod</a></li>
+
+        </ul>
+      </div>
+    <!-- </div> -->
+    <!-- <div class="split-right"> -->
+      <div class="tool-container">
+        <div class="tool-card" data-disabled="false">
+          <a href="javascript:void(0);" class="card-link" onclick="showSubCategory('subTilesJenkins')" ondblclick="goBack()">
+            <img src="icons/components/jenkins.png" alt="Jenkins">
+            <h3>Jenkins</h3>
+          </a>
+        </div>
+        <div class="tool-card" data-disabled="false">
+          <a href="javascript:void(0);" class="card-link" onclick="showSubCategory('subTilesAWS')" ondblclick="goBack()">
+            <img src="icons/components/aws.png" alt="AWS">
+            <h3>AWS</h3>
+          </a>
+        </div>
+        <div class="tool-card" data-disabled="false">
+          <a href="javascript:void(0);" class="card-link" onclick="showSubCategory('subTilesVMlist')" ondblclick="goBack()">
+            <img src="icons/components/vmlist.png" alt="VM List">
+            <h3>VM List</h3>
+          </a>
+        </div>
+        <div class="tool-card" data-disabled="false">
+          <a href="javascript:void(0);" class="card-link" onclick="showSubCategory('subTilesGrafana')" ondblclick="goBack()">
+            <img src="icons/components/grafana.png" alt="Grafana">
+            <h3>Grafana</h3>
+          </a>
+        </div>
+        <div class="tool-card" data-disabled="false">
+          <a href="javascript:void(0);" class="card-link" onclick="showSubCategory('subTilesZabbix')" ondblclick="goBack()">
+            <img src="icons/components/zabbix.png" alt="Zabbix">
+            <h3>Zabbix</h3>
+          </a>
+        </div>
+        <div class="tool-card" data-disabled="false">
+          <a href="javascript:void(0);" class="card-link" onclick="showSubCategory('subTilesKibana')" ondblclick="goBack()">
+            <img src="icons/components/kibana.png" alt="Kibana">
+            <h3>Kibana</h3>
+          </a>
+        </div>
+        <div class="tool-card" data-disabled="false">
+          <a href="javascript:void(0);" class="card-link" onclick="showSubCategory('subTilesPrometheus')" ondblclick="goBack()">
+            <img src="icons/components/prometheus.png" alt="Prometheus">
+            <h3>Prometheus</h3>
+          </a>
+        </div>
+        <div class="tool-card" data-disabled="false">
+          <a href="javascript:void(0);" class="card-link" onclick="showSubCategory('subTilesKiali')" ondblclick="goBack()">
+            <img src="icons/components/kiali.png" alt="Kiali">
+            <h3>Kiali</h3>
+          </a>
+        </div>
+        <div class="tool-card" data-disabled="false">
+          <a href="javascript:void(0);" class="card-link" onclick="showSubCategory('subTilesBackOffice')" ondblclick="goBack()">
+            <img src="icons/components/bo.png" alt="BackOffice">
+            <h3>BackOffice</h3>
+          </a>
+        </div>
+        <div class="tool-card" data-disabled="false">
+          <a href="javascript:void(0);" class="card-link" onclick="showSubCategory('subTilesVault')" ondblclick="goBack()">
+            <img src="icons/components/vault.png" alt="Vault">
+            <h3>Vault</h3>
+          </a>
+        </div>
+        <div class="tool-card" data-disabled="false">
+          <a href="https://apps.example.com/sonar" target="_blank">
+            <img src="icons/components/sonarqube.png" alt="Sonarqube">
+            <h3>Sonarqube</h3>
+          </a>
+        </div>
+        <div class="tool-card" data-disabled="false">
+          <a href="javascript:void(0);" class="card-link" onclick="showSubCategory('subTilesJfrog')" ondblclick="goBack()">
+            <img src="icons/components/jfrog.png" alt="Jfrog">
+            <h3>JFrog</h3>
+          </a>
+        </div>
+        <div class="tool-card" data-disabled="false">
+          <a href="https://nexus.example.com" target="_blank">
+            <img src="icons/components/nexus.png" alt="Nexus">
+            <h3>Nexus</h3>
+          </a>
+        </div>
+        <div class="tool-card" data-disabled="false">
+          <a href="https://packagist.example.com/" target="_blank">
+            <img src="icons/components/packagist.png" alt="Packagist">
+            <h3>Packagist</h3>
+          </a>
+        </div>
+        <div class="tool-card" data-disabled="false">
+          <a href="https://passbolt.example.com/" target="_blank">
+            <img src="icons/components/passbolt.png" alt="Passbolt">
+            <h3>Passbolt</h3>
+          </a>
+        </div>
+        <div class="tool-card" data-disabled="false">
+          <a href="https://bitbucket.org/" target="_blank">
+            <img src="icons/components/bitbucket.png" alt="Bitbucket">
+            <h3>Bitbucket</h3>
+          </a>
+        </div>
+        <div class="tool-card" data-disabled="false">
+          <a href="https://atlassian.net/jira/" target="_blank">
+            <img src="icons/components/jira.png" alt="Jira">
+            <h3>Jira</h3>
+          </a>
+        </div>
+        <div class="tool-card" data-disabled="false">
+          <a href="https://atlassian.net/wiki/" target="_blank">
+            <img src="icons/components/confluence.png" alt="Confluence">
+            <h3>Confluence</h3>
+          </a>
+        </div>
+        <div class="tool-card" data-disabled="false">
+          <a href="https://www.microsoft.com/en-in/microsoft-teams/log-in" target="_blank">
+            <img src="icons/components/teams.png" alt="Teams">
+            <h3>Teams</h3>
+          </a>
+        </div>
+        <div class="tool-card" data-disabled="false">
+          <a href="https://sharepoint.com/" target="_blank">
+            <img src="icons/components/sharepoint.png" alt="Sharepoint">
+            <h3>Sharepoint</h3>
+          </a>
+        </div>
+        <div class="tool-card" data-disabled="false">
+          <a href="https://outlook.office365.com/" target="_blank">
+            <img src="icons/components/outlook.png" alt="Outlook">
+            <h3>Outlook</h3>
+          </a>
+        </div>
+      </div>
+    <!-- </div> -->
+  </div>
+
+  <div class="popup-overlay" id="popupOverlay"></div>
+
+  <div class="popup-container" id="popupContainer">
+    <div class="popup-content" id="popupContent">
+      <!-- Content for the popup goes here -->
+      <span class="popup-close" id="popupCloseBtn">&times;</span>
+      <div id="subTilesJenkins" class="sub-category" style="display: none;">
+        <h2>Jenkins Envs</h2>
+        <div class="tool-container">
+          <div class="tool-card" data-disabled="false">
+            <a href="https://jenkins.example.com/stage" target="_blank">
+              <img src="icons/components/jenkins.png" alt="Jenkins">
+              <h3>Dev</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://jenkins.example.com/stress" target="_blank">
+              <img src="icons/components/jenkins.png" alt="Jenkins">
+              <h3>QA</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://jenkins.example.com/uat" target="_blank">
+              <img src="icons/components/jenkins.png" alt="Jenkins">
+              <h3>UAT</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://jenkins.example.com/prod" target="_blank">
+              <img src="icons/components/jenkins.png" alt="Jenkins">
+              <h3>Production</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="subTilesJfrog" class="sub-category" style="display: none;">
+        <h2>JFrog Envs</h2>
+        <div class="tool-container">
+          <div class="tool-card" data-disabled="false">
+            <a href="https://jfrog.exampl.com/dev" target="_blank">
+              <img src="icons/components/jfrog.png" alt="Jfrog">
+              <h3>Dev/QA</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://jfrog.exampl.com/prod" target="_blank">
+              <img src="icons/components/jfrog.png" alt="Jfrog">
+              <h3>Production</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="subTilesVMlist" class="sub-category" style="display: none;">
+        <h2>VM List Envs</h2>
+        <div class="tool-container">
+          <div class="tool-card" data-disabled="false">
+            <a href="https://apps.example.com/vmlist/Dev.html" target="_blank">
+              <img src="icons/components/vmlist.png" alt="VM List">
+              <h3>Development</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://apps.example.com/vmlist/PreProd.html" target="_blank">
+              <img src="icons/components/vmlist.png" alt="VM List">
+              <h3>UAT</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://apps.example.com/vmlist/Prod.html" target="_blank">
+              <img src="icons/components/vmlist.png" alt="VM List">
+              <h3>Prod</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="subTilesAWS" class="sub-category" style="display: none;">
+        <h2>AWS Envs</h2>
+        <div class="tool-container">
+          <div class="tool-card" data-disabled="false">
+            <a href="https://console.aws.amazon.com" target="_blank">
+              <img src="icons/components/aws.png" alt="AWS">
+              <h3>Development</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://console.aws.amazon.com" target="_blank">
+              <img src="icons/components/aws.png" alt="AWS">
+              <h3>UAT</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="console.aws.amazon.com" target="_blank">
+              <img src="icons/components/aws.png" alt="AWS">
+              <h3>Prod</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="subTilesKiali" class="sub-category" style="display: none;">
+        <h2>Kiali Envs</h2>
+        <div class="tool-container">
+          <div class="tool-card" data-disabled="false">
+            <a href="https://dev-monitor.example.com/kiali" target="_blank">
+              <img src="icons/components/kiali.png" alt="kiali">
+              <h3>Dev</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://qa-monitor.example.com/kiali" target="_blank">
+              <img src="icons/components/kiali.png" alt="kiali">
+              <h3>QA</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://uat-monitor.example.com/kiali" target="_blank">
+              <img src="icons/components/kiali.png" alt="kiali">
+              <h3>UAT</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://monitor.example.com/kiali" target="_blank">
+              <img src="icons/components/kiali.png" alt="kiali">
+              <h3>Prod</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="subTilesGrafana" class="sub-category" style="display: none;">
+        <h2>Grafana Envs</h2>
+        <div class="tool-container">
+          <div class="tool-card" data-disabled="false">
+            <a href="https://dev-monitor.example.com/grafana" target="_blank">
+              <img src="icons/components/grafana.png" alt="Grafana">
+              <h3>Dev</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://qa-monitor.example.com/grafana" target="_blank">
+              <img src="icons/components/grafana.png" alt="Grafana">
+              <h3>QA</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://uat-monitor.example.com/grafana" target="_blank">
+              <img src="icons/components/grafana.png" alt="Grafana">
+              <h3>UAT</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://monitor.example.com/grafana" target="_blank">
+              <img src="icons/components/grafana.png" alt="Grafana">
+              <h3>Prod</h3>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+
+      <div id="subTilesZabbix" class="sub-category" style="display: none;">
+        <h2>Zabbix Envs</h2>
+        <div class="tool-container">
+          <div class="tool-card" data-disabled="false">
+            <a href="https://dev-monitor.example.com/zabbix" target="_blank">
+              <img src="icons/components/zabbix.png" alt="zabbix">
+              <h3>Dev</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://qa-monitor.example.com/zabbix" target="_blank">
+              <img src="icons/components/zabbix.png" alt="zabbix">
+              <h3>QA</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://uat-monitor.example.com/zabbix" target="_blank">
+              <img src="icons/components/zabbix.png" alt="zabbix">
+              <h3>UAT</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://monitor.example.com/zabbix" target="_blank">
+              <img src="icons/components/zabbix.png" alt="zabbix">
+              <h3>Prod</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="subTilesKibana" class="sub-category" style="display: none;">
+        <h2>Kibana Envs</h2>
+        <div class="tool-container">
+          <div class="tool-card" data-disabled="false">
+            <a href="https://dev-monitor.example.com/kibana" target="_blank">
+              <img src="icons/components/kibana.png" alt="kibana">
+              <h3>Dev</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://qa-monitor.example.com/kibana" target="_blank">
+              <img src="icons/components/kibana.png" alt="kibana">
+              <h3>QA</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://uat-monitor.example.com/kibana" target="_blank">
+              <img src="icons/components/kibana.png" alt="kibana">
+              <h3>UAT</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://monitor.example.com/kibana" target="_blank">
+              <img src="icons/components/kibana.png" alt="kibana">
+              <h3>Prod</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="subTilesPrometheus" class="sub-category" style="display: none;">
+        <h2>Prometheus Envs</h2>
+        <div class="tool-container">
+          <div class="tool-card" data-disabled="false">
+            <a href="https://dev-monitor.example.com/prometheus" target="_blank">
+              <img src="icons/components/prometheus.png" alt="prometheus">
+              <h3>Dev</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://qa-monitor.example.com/prometheus" target="_blank">
+              <img src="icons/components/prometheus.png" alt="prometheus">
+              <h3>QA</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://uat-monitor.example.com/prometheus" target="_blank">
+              <img src="icons/components/prometheus.png" alt="prometheus">
+              <h3>UAT</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://monitor.example.com/prometheus" target="_blank">
+              <img src="icons/components/prometheus.png" alt="prometheus">
+              <h3>Prod</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="subTilesBackOffice" class="sub-category" style="display: none;">
+        <h2>BackOffice Envs</h2>
+        <div class="tool-container">
+          <div class="tool-card" data-disabled="false">
+            <a href="https://dev-backoffice.example.com" target="_blank">
+              <img src="icons/components/bo.png" alt="BackOffice">
+              <h3>Dev</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://qa-backoffice.example.com" target="_blank">
+              <img src="icons/components/bo.png" alt="BackOffice">
+              <h3>QA</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://uat-backoffice.example.com" target="_blank">
+              <img src="icons/components/bo.png" alt="BackOffice">
+              <h3>UAT</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://backoffice.example.com" target="_blank">
+              <img src="icons/components/bo.png" alt="BackOffice">
+              <h3>Prod</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="subTilesVault" class="sub-category" style="display: none;">
+        <h2>Vault Envs</h2>
+        <div class="tool-container">
+          <div class="tool-card" data-disabled="false">
+            <a href="https://dev-vault.example.com" target="_blank">
+              <img src="icons/components/vault.png" alt="Vault">
+              <h3>Dev</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://qa-vault.example.com" target="_blank">
+              <img src="icons/components/vault.png" alt="Vault">
+              <h3>QA</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://uat-vault.example.com" target="_blank">
+              <img src="icons/components/vault.png" alt="Vault">
+              <h3>UAT</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://vault.example.com" target="_blank">
+              <img src="icons/components/vault.png" alt="Vault">
+              <h3>Prod</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="subTilesDev" class="sub-category" style="display: none;">
+        <h2>Dev</h2>
+        <div class="tool-container">
+          <div class="tool-card" data-disabled="false">
+            <a href="https://apps.example.com/vmlist/Dev.html" target="_blank">
+              <img src="icons/components/vmlist.png" alt="VM List">
+              <h3>VM List</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://console.aws.amazon.com" target="_blank">
+              <img src="icons/components/aws.png" alt="AWS">
+              <h3>AWS</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://dev-backoffice.example.com" target="_blank">
+              <img src="icons/components/bo.png" alt="BackOffice">
+              <h3>BackOffice</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://dev-monitor.example.com/grafana" target="_blank">
+              <img src="icons/components/grafana.png" alt="Grafana">
+              <h3>Grafana</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://dev-monitor.example.com/zabbix" target="_blank">
+              <img src="icons/components/zabbix.png" alt="Zabbix">
+              <h3>Zabbix</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://dev-monitor.example.com/kibana" target="_blank">
+              <img src="icons/components/kibana.png" alt="Kibana">
+              <h3>Kibana</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://dev-monitor.example.com/prometheus" target="_blank">
+              <img src="icons/components/prometheus.png" alt="Prometheus">
+              <h3>Prometheus</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="subTilesQA" class="sub-category" style="display: none;">
+        <h2>QA</h2>
+        <div class="tool-container">
+          <div class="tool-card" data-disabled="false">
+            <a href="https://apps.example.com/vmlist/Dev.html" target="_blank">
+              <img src="icons/components/vmlist.png" alt="VM List">
+              <h3>VM List</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://console.aws.amazon.com" target="_blank">
+              <img src="icons/components/aws.png" alt="AWS">
+              <h3>AWS</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://qa-backoffice.example.com" target="_blank">
+              <img src="icons/components/bo.png" alt="BackOffice">
+              <h3>BackOffice</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://qa-monitor.example.com/grafana" target="_blank">
+              <img src="icons/components/grafana.png" alt="Grafana">
+              <h3>Grafana</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://qa-monitor.example.com/zabbix" target="_blank">
+              <img src="icons/components/zabbix.png" alt="Zabbix">
+              <h3>Zabbix</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://qa-monitor.example.com/kibana" target="_blank">
+              <img src="icons/components/kibana.png" alt="Kibana">
+              <h3>Kibana</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://qa-monitor.example.com/prometheus" target="_blank">
+              <img src="icons/components/prometheus.png" alt="Prometheus">
+              <h3>Prometheus</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://qa-kiali.example.com/kiali" target="_blank">
+              <img src="icons/components/kiali.png" alt="kiali">
+              <h3>kiali</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="subTilesUAT" class="sub-category" style="display: none;">
+        <h2>UAT</h2>
+        <div class="tool-container">
+          <div class="tool-card" data-disabled="false">
+            <a href="https://apps.example.com/vmlist/PreProd.html" target="_blank">
+              <img src="icons/components/vmlist.png" alt="VM List">
+              <h3>VM List</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://console.aws.amazon.com" target="_blank">
+              <img src="icons/components/aws.png" alt="AWS">
+              <h3>AWS</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://uat-backoffice.example.com" target="_blank">
+              <img src="icons/components/bo.png" alt="BackOffice">
+              <h3>BackOffice</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://uat-monitor.example.com/grafana" target="_blank">
+              <img src="icons/components/grafana.png" alt="Grafana">
+              <h3>Grafana</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://uat-monitor.example.com/zabbix" target="_blank">
+              <img src="icons/components/zabbix.png" alt="Zabbix">
+              <h3>Zabbix</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://uat-monitor.example.com/kibana" target="_blank">
+              <img src="icons/components/kibana.png" alt="Kibana">
+              <h3>Kibana</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://uat-monitor.example.com/prometheus" target="_blank">
+              <img src="icons/components/prometheus.png" alt="Prometheus">
+              <h3>Prometheus</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://uat-kiali.example.com/kiali" target="_blank">
+              <img src="icons/components/kiali.png" alt="kiali">
+              <h3>Kiali</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="subTilesProd" class="sub-category" style="display: none;">
+        <h2>Prod</h2>
+        <div class="tool-container">
+          <div class="tool-card" data-disabled="false">
+            <a href="https://apps.example.com/vmlist/Prod.html" target="_blank">
+              <img src="icons/components/vmlist.png" alt="VM List">
+              <h3>VM List Prod</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://apps.example.com/vmlist/DR.html" target="_blank">
+              <img src="icons/components/vmlist.png" alt="VM List">
+              <h3>VM List DR</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://console.aws.amazon.com" target="_blank">
+              <img src="icons/components/aws.png" alt="AWS">
+              <h3>AWS</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://backoffice.example.com" target="_blank">
+              <img src="icons/components/bo.png" alt="BackOffice">
+              <h3>BackOffice</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://monitor.example.com/grafana" target="_blank">
+              <img src="icons/components/grafana.png" alt="Grafana">
+              <h3>Grafana</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://monitor.example.com/zabbix" target="_blank">
+              <img src="icons/components/zabbix.png" alt="Zabbix">
+              <h3>Zabbix</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://monitor.example.com/kibana" target="_blank">
+              <img src="icons/components/kibana.png" alt="Kibana">
+              <h3>Kibana</h3>
+            </a>
+          </div>
+          <div class="tool-card" data-disabled="false">
+            <a href="https://monitor.example.com/prometheus" target="_blank">
+              <img src="icons/components/prometheus.png" alt="Prometheus">
+              <h3>Prometheus</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
